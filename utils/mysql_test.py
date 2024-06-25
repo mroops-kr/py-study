@@ -18,7 +18,7 @@ def test_select_list():
   with MysqlClient() as client:
     results = client.auto.selectList('actor', {
       'actorId': [1, 2, 3], # >> where actor_id in (1, 2, 3)
-      'firstName': ''
+      'firstName': '' # ignored, empty string
     })
 
     for result in results:
@@ -69,7 +69,7 @@ def test_insert():
 def test_update():
   with MysqlClient() as client:
     client.auto.update('actor', {
-        'actorId': 301,
+        'actorId': 301, # Key
         'lastUpdate': '2024-12-25'
       })
     client.commit()
@@ -78,7 +78,7 @@ def test_update():
 def test_delete():
   with MysqlClient() as client:
     client.auto.delete('actor', {
-        'actorId': 201,
+        'actorId': 301, # Key
       })
     client.commit()
 
