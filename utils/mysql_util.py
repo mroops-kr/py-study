@@ -37,7 +37,7 @@ class Col:
 '''
   Table 의 Column 을 로드해서 SQL 자동 생성
 '''
-class Tableloader:
+class TableLoader:
 
   table_map = {}
   table_seq_created = False
@@ -365,31 +365,31 @@ class Auto:
     self.client = client
   
   def selectOne(self, table, param):
-    va = Tableloader().mkSelect(self.client, table, param)
+    va = TableLoader().mkSelect(self.client, table, param)
     return self.client.selectOne(va['sql'], va['param'])
 
   def selectList(self, table, param):
-    va = Tableloader().mkSelect(self.client, table, param)
+    va = TableLoader().mkSelect(self.client, table, param)
     return self.client.selectList(va['sql'], va['param'])
   
   def count(self, table, param):
-    va = Tableloader().mkCount(self.client, table, param)
+    va = TableLoader().mkCount(self.client, table, param)
     return self.client.count(va['sql'], va['param'])
   
   def insert(self, table, param):
-    va = Tableloader().mkInsert(self.client, table, param)
+    va = TableLoader().mkInsert(self.client, table, param)
     return self.client.insert(va['sql'], va['param'])
   
   def update(self, table, param, whereParam = None):
-    va = Tableloader().mkUpdate(self.client, table, param, whereParam)
+    va = TableLoader().mkUpdate(self.client, table, param, whereParam)
     return self.client.update(va['sql'], va['param'])
   
   def delete(self, table, param):
-    va = Tableloader().mkDelete(self.client, table, param)
+    va = TableLoader().mkDelete(self.client, table, param)
     return self.client.delete(va['sql'], va['param'])
   
   def nextVal(self, table):
-    return Tableloader().nextVal(self.client, table)
+    return TableLoader().nextVal(self.client, table)
 
 class MysqlClient:
   
