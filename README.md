@@ -5,8 +5,8 @@
 작성자: mroops@naver.com
 
 1. utils/mysql_util.py,   utils/mysql_test.py
-> python 쪽에는 sql을 편하게 쓰는 라이브러리가 없는 듯 하여 만듬
-> mysql_test.py - 사용 예제
+- python 쪽에는 sql을 편하게 쓰는 라이브러리가 없는 듯 하여 만듬
+- mysql_test.py - 사용 예제
 
 
 Copy Right: 맘데루 가져다 써유..
